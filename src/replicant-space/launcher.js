@@ -5,11 +5,14 @@
   "use strict";
 
   var VIEWS = { "Galaxy": "galaxy", "One system": "system", "Cycle my systems": "cycle" };
-  var opts = { link: "", view: "Galaxy", system: "", labels: true, rotate: 4, refresh: 5, cycle: 60 };
+  var opts = { link: "", view: "Galaxy", system: "", labels: true, cover: true, fleets: true, hud: "Right", rotate: 4, refresh: 5,
+              cycle: 60 };
   var wall = document.getElementById("wall");
   var setup = document.getElementById("setup");
   var why = document.getElementById("why");
   var current = null;
+
+  function off(v) { return v === false || v === "false" || v === "0"; }
 
   function num(v, d, lo, hi) {
     var n = parseFloat(v);
@@ -51,7 +54,11 @@
     q.set("view", VIEWS[opts.view] || "galaxy");
     var star = String(opts.system || "").trim().toUpperCase();
     if (star) q.set("star", star);
-    q.set("labels", opts.labels === false || opts.labels === "false" ? "0" : "1");
+    q.set("labels", off(opts.labels) ? "0" : "1");
+    q.set("cover", off(opts.cover) ? "0" : "1");
+    q.set("fleets", off(opts.fleets) ? "0" : "1");
+    var hud = String(opts.hud || "Right").toLowerCase();
+    q.set("hud", hud === "left" || hud === "off" ? hud : "right");
     q.set("rotate", String(num(opts.rotate, 4, 0, 20) / 10));
     q.set("refresh", String(Math.round(num(opts.refresh, 5, 1, 120))));
     q.set("cycle", String(Math.round(num(opts.cycle, 60, 10, 3600))));

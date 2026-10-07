@@ -1,7 +1,7 @@
 {
     "name": "Replicant Space",
     "author": "sk3ynet",
-    "description": "Your Replicant Space galaxy and star systems as a live wallpaper: your systems, replicants, relay range and ships in transit, from your own Replicant Space web client.",
+    "description": "Your Replicant Space galaxy and star systems as a live wallpaper: your systems, replicants, fleets, relay range, ships in transit and stockpiles, from your own Replicant Space web client.",
     "entry": "index.html",
     "image": "image.png",
     "preview": "preview.png",
@@ -30,6 +30,22 @@
             "type": "checkbox",
             "label": "Show labels",
             "value": true
+        },
+        "cover": {
+            "type": "checkbox",
+            "label": "Show relay/hub range",
+            "value": true
+        },
+        "fleets": {
+            "type": "checkbox",
+            "label": "Show fleets (where they are, what they're doing, where they're headed)",
+            "value": true
+        },
+        "hud": {
+            "type": "select",
+            "label": "Dashboard panel (devices, stockpiles, fleets)",
+            "options": ["Right", "Left", "Off"],
+            "value": "Right"
         },
         "rotate": {
             "type": "range",

@@ -3,7 +3,8 @@
 Your [Replicant Space](https://replicant.space) galaxy and star systems as a live Windows desktop wallpaper, using
 [Octos](https://github.com/underpig1/octos). It shows the same maps as your
 [Replicant Space web client](https://github.com/sk3ynet/replicant.space-frontend): your systems and replicants, relay
-and hub range, scanned systems, and ships in transit, all live.
+and hub range, scanned systems, ships in transit and your fleets, all live, with a dashboard panel showing device
+activity, your stockpiles with a 48-hour trend, and each fleet's mission.
 
 ![Galaxy and system views](src/replicant-space/preview.png)
 
@@ -12,7 +13,7 @@ This is an optional add-on. The web client works the same without it.
 ## What you need
 
 - Windows 10 or 11 with [Octos](https://github.com/underpig1/octos#quickstart) installed.
-- Your Replicant Space web client, version **1.28.0 or later**, reachable from that PC (for example
+- Your Replicant Space web client, version **1.28.0 or later** (1.29.0 for fleets and the dashboard panel), reachable from that PC (for example
   `https://replicant.example.com`).
 
 ## Install
@@ -33,6 +34,9 @@ This is an optional add-on. The web client works the same without it.
 | Show | **Galaxy** (3D, slowly turning), **One system**, or **Cycle my systems** (every system with your devices, in turn). |
 | System | For *One system*: which one, e.g. `FALQUORYX`. For *Galaxy*: the star to centre on. Blank centres on your replicant. |
 | Show labels | Star and place names, and the labels of ships in transit. |
+| Show relay/hub range | The faint spheres around your relays (7.5 ly) and hubs (15 ly) on the galaxy. |
+| Show fleets | On the galaxy, a teal ring where each fleet's devices are, labelled with what the fleet is doing (mission phase, how many devices are working / moving / idle), and a dashed line to the system its mission is headed for. Stalled fleets show in amber. In the system views, the fleets in that system are listed under its name. Needs client 1.29.0. |
+| Dashboard panel | **Right**, **Left** or **Off**: devices working / moving / idle, stockpiles with their 48-hour trend, and your fleets' missions. Needs client 1.29.0. |
 | Galaxy rotation speed | 0 stands still. |
 | Refresh every | Minutes between data refreshes. |
 | Cycle: seconds per system | For *Cycle my systems*. |
