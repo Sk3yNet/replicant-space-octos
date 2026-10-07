@@ -1,7 +1,7 @@
 {
     "name": "Replicant Space",
     "author": "sk3ynet",
-    "description": "Version 1.3.1. Your Replicant Space galaxy and star systems as a live wallpaper: your systems, replicants, fleets, supply lines, relay range, ships in transit and stockpiles, from your own Replicant Space web client.",
+    "description": "Version 1.4.0. Your Replicant Space galaxy and star systems as a live wallpaper: your systems, replicants, fleets, supply lines, relay range, ships in transit and stockpiles, from your own Replicant Space web client.",
     "entry": "index.html",
     "image": "image.png",
     "preview": "preview.png",
@@ -44,6 +44,11 @@
         "supply": {
             "type": "checkbox",
             "label": "Show supply lines (materials and trade routes between your fleets' systems)",
+            "value": true
+        },
+        "production": {
+            "type": "checkbox",
+            "label": "Show mining sparkles (what each system is mining now, coloured by resource)",
             "value": true
         },
         "hud": {

@@ -51,6 +51,7 @@ the version in the wallpaper's bottom-right corner.
 | Show relay/hub range | The faint spheres around your relays (7.5 ly) and hubs (15 ly) on the galaxy. |
 | Show fleets | On the galaxy, a teal ring where each fleet's devices are, labelled with what the fleet is doing (mission phase, how many devices are working / moving / idle), and a dashed line to the system its mission is headed for. Stalled fleets show in amber. In the system views, the fleets in that system are listed under its name. Needs client 1.29.0. |
 | Show supply lines | Arcs between your fleets' systems: amber where a fleet's materials go (or a mining mission delivers), blue along a trade fleet's run. Faint and dotted while only planned, solid while a ferry or mission runs it, with dots flowing while something travels along it. Also listed in the dashboard panel and under each system. Needs client 1.30.0. |
+| Show mining sparkles | Coloured four-point sparkles orbiting each star, one per drone mining there now, one orbit per resource (structural grey, conductive orange, silicates sand, carbon brown, volatiles cyan, rares magenta; the panel's stockpile rows use the same colours). Needs client 1.31.0. |
 | Dashboard panel | **Right**, **Left** or **Off**: devices working / moving / idle, stockpiles with their 48-hour trend, and your fleets' missions. Needs client 1.29.0. |
 | Galaxy rotation speed | 0 stands still. |
 | Refresh every | Minutes between data refreshes. |
@@ -58,7 +59,7 @@ the version in the wallpaper's bottom-right corner.
 
 Changes in Octos apply straight away.
 
-The wallpaper's bottom-right corner shows the versions running, e.g. `client 1.30.1 · add-on 1.3.1`. The add-on's
+The wallpaper's bottom-right corner shows the versions running, e.g. `client 1.30.1 · add-on 1.4.0`. The add-on's
 version is also in its description in the Octos app. If a setting seems to do nothing, check the client version there:
 the newer settings need the client version listed next to them.
 

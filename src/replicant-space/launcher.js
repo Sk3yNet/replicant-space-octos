@@ -4,9 +4,9 @@
 (function () {
   "use strict";
 
-  var VERSION = "1.3.1";   // keep in step with octos.json
+  var VERSION = "1.4.0";   // keep in step with octos.json
   var VIEWS = { "Galaxy": "galaxy", "One system": "system", "Cycle my systems": "cycle" };
-  var opts = { link: "", view: "Galaxy", system: "", labels: true, cover: true, fleets: true, supply: true, hud: "Right", rotate: 4, refresh: 5,
+  var opts = { link: "", view: "Galaxy", system: "", labels: true, cover: true, fleets: true, supply: true, production: true, hud: "Right", rotate: 4, refresh: 5,
               cycle: 60 };
   var wall = document.getElementById("wall");
   var setup = document.getElementById("setup");
@@ -59,6 +59,7 @@
     q.set("cover", off(opts.cover) ? "0" : "1");
     q.set("fleets", off(opts.fleets) ? "0" : "1");
     q.set("supply", off(opts.supply) ? "0" : "1");
+    q.set("production", off(opts.production) ? "0" : "1");
     var hud = String(opts.hud || "Right").toLowerCase();
     q.set("hud", hud === "left" || hud === "off" ? hud : "right");
     q.set("rotate", String(num(opts.rotate, 4, 0, 20) / 10));
