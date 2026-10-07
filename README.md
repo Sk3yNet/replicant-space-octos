@@ -26,6 +26,20 @@ This is an optional add-on. The web client works the same without it.
    shows. It's only shown once.
 4. In Octos, open the **Replicant Space** wallpaper's settings and paste the link into **Wallpaper link**.
 
+## Update
+
+Install the new `ReplicantSpace.zip` over the old one: **Install mod from .zip** again, no need to remove it first.
+Octos unpacks a zip into a folder named after the file, so the new version replaces the old files and keeps your
+settings, wallpaper link included. Then re-apply the wallpaper (or restart Octos) so it loads the new files, and check
+the version in the wallpaper's bottom-right corner.
+
+- Keep the file name **`ReplicantSpace.zip`**. If your browser saved it as `ReplicantSpace (1).zip`, rename it first,
+  or Octos installs it as a second, separate mod.
+- Settings added in a new version appear with their defaults; settings you already had keep their values (and their
+  old wording).
+- Most changes don't need an update at all: the maps, the panel and the overlays are drawn by your web client, so they
+  change when you redeploy the client. The add-on only changes when a setting is added.
+
 ## Settings
 
 | Setting | What it does |
@@ -44,7 +58,7 @@ This is an optional add-on. The web client works the same without it.
 
 Changes in Octos apply straight away.
 
-The wallpaper's bottom-right corner shows the versions running, e.g. `client 1.30.1 · add-on 1.3.0`. The add-on's
+The wallpaper's bottom-right corner shows the versions running, e.g. `client 1.30.1 · add-on 1.3.1`. The add-on's
 version is also in its description in the Octos app. If a setting seems to do nothing, check the client version there:
 the newer settings need the client version listed next to them.
 
