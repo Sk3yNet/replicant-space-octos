@@ -44,7 +44,7 @@ This is an optional add-on. The web client works the same without it.
 
 Changes in Octos apply straight away.
 
-The wallpaper's bottom-right corner shows the versions running, e.g. `client 1.30.1 · add-on 1.2.0`. The add-on's
+The wallpaper's bottom-right corner shows the versions running, e.g. `client 1.30.1 · add-on 1.3.0`. The add-on's
 version is also in its description in the Octos app. If a setting seems to do nothing, check the client version there:
 the newer settings need the client version listed next to them.
 

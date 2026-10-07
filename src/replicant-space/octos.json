@@ -1,14 +1,14 @@
 {
     "name": "Replicant Space",
     "author": "sk3ynet",
-    "description": "Version 1.2.0. Your Replicant Space galaxy and star systems as a live wallpaper: your systems, replicants, fleets, supply lines, relay range, ships in transit and stockpiles, from your own Replicant Space web client.",
+    "description": "Version 1.3.0. Your Replicant Space galaxy and star systems as a live wallpaper: your systems, replicants, fleets, supply lines, relay range, ships in transit and stockpiles, from your own Replicant Space web client.",
     "entry": "index.html",
     "image": "image.png",
     "preview": "preview.png",
     "options": {
         "help": {
             "type": "description",
-            "label": "Replicant Space wallpaper 1.2.0. Make a wallpaper link in your Replicant Space web client (Account › Desktop wallpaper) and paste it below. The running versions show in the wallpaper's bottom-right corner."
+            "label": "Replicant Space wallpaper 1.3.0. Make a wallpaper link in your Replicant Space web client (Account › Desktop wallpaper) and paste it below. The running versions show in the wallpaper's bottom-right corner."
         },
         "link": {
             "type": "text",
