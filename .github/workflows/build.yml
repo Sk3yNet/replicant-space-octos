@@ -29,6 +29,14 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: dist/ReplicantSpace.zip
+      - name: Refuse an existing tag (never overwrite a release)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          if git ls-remote --exit-code --tags origin "refs/tags/$VERSION" >/dev/null; then
+            echo "::error::$VERSION already exists: pick a new version"; exit 1
+          fi
       - name: Make the release (run by hand)
         if: github.event_name == 'workflow_dispatch'
         uses: softprops/action-gh-release@v2
