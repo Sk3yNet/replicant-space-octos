@@ -4,6 +4,11 @@ on:
     branches: [main]
     tags: ["v*"]
   pull_request:
+  workflow_dispatch:   # Actions › build › Run workflow: makes the tag and the release from main (e.g. v1.1.0)
+    inputs:
+      version:
+        description: "Release tag, e.g. v1.1.0"
+        required: true
 permissions:
   contents: write
 jobs:
@@ -23,4 +28,13 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
+          files: dist/ReplicantSpace.zip
+      - name: Make the release (run by hand)
+        if: github.event_name == 'workflow_dispatch'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.version }}
+          target_commitish: ${{ github.sha }}
+          name: ${{ inputs.version }}
+          generate_release_notes: true
           files: dist/ReplicantSpace.zip

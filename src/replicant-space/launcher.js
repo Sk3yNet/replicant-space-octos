@@ -5,7 +5,7 @@
   "use strict";
 
   var VIEWS = { "Galaxy": "galaxy", "One system": "system", "Cycle my systems": "cycle" };
-  var opts = { link: "", view: "Galaxy", system: "", labels: true, cover: true, fleets: true, hud: "Right", rotate: 4, refresh: 5,
+  var opts = { link: "", view: "Galaxy", system: "", labels: true, cover: true, fleets: true, supply: true, hud: "Right", rotate: 4, refresh: 5,
               cycle: 60 };
   var wall = document.getElementById("wall");
   var setup = document.getElementById("setup");
@@ -57,6 +57,7 @@
     q.set("labels", off(opts.labels) ? "0" : "1");
     q.set("cover", off(opts.cover) ? "0" : "1");
     q.set("fleets", off(opts.fleets) ? "0" : "1");
+    q.set("supply", off(opts.supply) ? "0" : "1");
     var hud = String(opts.hud || "Right").toLowerCase();
     q.set("hud", hud === "left" || hud === "off" ? hud : "right");
     q.set("rotate", String(num(opts.rotate, 4, 0, 20) / 10));
