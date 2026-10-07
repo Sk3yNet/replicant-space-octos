@@ -44,6 +44,10 @@ This is an optional add-on. The web client works the same without it.
 
 Changes in Octos apply straight away.
 
+The wallpaper's bottom-right corner shows the versions running, e.g. `client 1.30.1 · add-on 1.2.0`. The add-on's
+version is also in its description in the Octos app. If a setting seems to do nothing, check the client version there:
+the newer settings need the client version listed next to them.
+
 ## How it works, and what the link can do
 
 A wallpaper can't sign in with Google, so the web client hands out a **wallpaper link** with a key in it:
@@ -79,6 +83,8 @@ src/replicant-space/
   Outside Octos, the settings come from the address.
 - **In Octos:** `octos run src/replicant-space`, then `octos reload` after changes and `octos dev-tools` for
   DevTools.
+- **Versions:** bump the version in `octos.json` (description and help text), `launcher.js` (`VERSION`) and
+  `index.html` together.
 - **Build:** `./scripts/build.sh` makes `dist/ReplicantSpace.zip`. Pushing a `v*` tag builds it on GitHub and attaches
   it to the release. Or, without a tag: Actions › build › *Run workflow* with a version (e.g. `v1.1.0`) makes the tag
   and the release from `main`.

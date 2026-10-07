@@ -4,6 +4,7 @@
 (function () {
   "use strict";
 
+  var VERSION = "1.2.0";   // keep in step with octos.json
   var VIEWS = { "Galaxy": "galaxy", "One system": "system", "Cycle my systems": "cycle" };
   var opts = { link: "", view: "Galaxy", system: "", labels: true, cover: true, fleets: true, supply: true, hud: "Right", rotate: 4, refresh: 5,
               cycle: 60 };
@@ -63,6 +64,7 @@
     q.set("rotate", String(num(opts.rotate, 4, 0, 20) / 10));
     q.set("refresh", String(Math.round(num(opts.refresh, 5, 1, 120))));
     q.set("cycle", String(Math.round(num(opts.cycle, 60, 10, 3600))));
+    q.set("addon", VERSION);
     show(link.base + "?" + q.toString() + "#key=" + encodeURIComponent(link.key));
   }
 
