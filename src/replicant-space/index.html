@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="no-referrer">
+  <title>Replicant Space</title>
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #05070c; user-select: none; }
+    #wall { position: fixed; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+    #setup { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; padding: 32px;
+             background: radial-gradient(circle at 50% 40%, #121a2b 0%, #05070c 70%);
+             color: #9fb3d1; font: 15px/1.6 "Segoe UI", system-ui, sans-serif; }
+    #setup .box { max-width: 560px; }
+    #setup h1 { margin: 0 0 6px; font: 600 22px/1.2 "Segoe UI", system-ui, sans-serif; color: #e3e9f5; letter-spacing: .02em; }
+    #setup ol { padding-left: 20px; margin: 12px 0; }
+    #setup li { margin: 4px 0; }
+    #setup code { font: 13px Consolas, ui-monospace, monospace; color: #c9d6ee; }
+    #setup .why { color: #e48a6b; margin-top: 10px; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <iframe id="wall" hidden referrerpolicy="no-referrer" title="Replicant Space"></iframe>
+  <div id="setup" hidden>
+    <div class="box">
+      <h1>Replicant Space wallpaper</h1>
+      <div>To show your galaxy and systems here:</div>
+      <ol>
+        <li>Open your Replicant Space web client and go to <b>Account › Desktop wallpaper</b>.</li>
+        <li>Press <b>Create wallpaper link</b> and copy the link it shows.</li>
+        <li>In the Octos app, open this wallpaper's settings and paste it into <b>Wallpaper link</b>.</li>
+      </ol>
+      <div>The link looks like <code>https://your-server/wallpaper/…/#key=rsw_…</code>.</div>
+      <div class="why" id="why"></div>
+    </div>
+  </div>
+  <script src="octos.min.js"></script>
+  <script src="launcher.js"></script>
+</body>
+</html>

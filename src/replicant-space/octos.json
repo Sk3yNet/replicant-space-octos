@@ -1,0 +1,57 @@
+{
+    "name": "Replicant Space",
+    "author": "sk3ynet",
+    "description": "Your Replicant Space galaxy and star systems as a live wallpaper: your systems, replicants, relay range and ships in transit, from your own Replicant Space web client.",
+    "entry": "index.html",
+    "image": "image.png",
+    "preview": "preview.png",
+    "options": {
+        "help": {
+            "type": "description",
+            "label": "Make a wallpaper link in your Replicant Space web client (Account › Desktop wallpaper) and paste it below."
+        },
+        "link": {
+            "type": "text",
+            "label": "Wallpaper link",
+            "value": ""
+        },
+        "view": {
+            "type": "select",
+            "label": "Show",
+            "options": ["Galaxy", "One system", "Cycle my systems"],
+            "value": "Galaxy"
+        },
+        "system": {
+            "type": "text",
+            "label": "System (for Galaxy: centre on it; for One system: which)",
+            "value": ""
+        },
+        "labels": {
+            "type": "checkbox",
+            "label": "Show labels",
+            "value": true
+        },
+        "rotate": {
+            "type": "range",
+            "label": "Galaxy rotation speed",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "value": 4
+        },
+        "refresh": {
+            "type": "number",
+            "label": "Refresh every (minutes)",
+            "min": 1,
+            "max": 120,
+            "value": 5
+        },
+        "cycle": {
+            "type": "number",
+            "label": "Cycle: seconds per system",
+            "min": 10,
+            "max": 3600,
+            "value": 60
+        }
+    }
+}
