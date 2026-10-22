@@ -1,7 +1,7 @@
 {
     "name": "Replicant Space",
     "author": "sk3ynet",
-    "description": "Version 1.4.0. Your Replicant Space galaxy and star systems as a live wallpaper: your systems, replicants, fleets, supply lines, relay range, ships in transit and stockpiles, from your own Replicant Space web client.",
+    "description": "Version 1.5.0. Your Replicant Space galaxy and star systems as a live wallpaper: your systems, replicants, fleets, supply lines, relay range, ships in transit and stockpiles, from your own Replicant Space web client.",
     "entry": "index.html",
     "image": "image.png",
     "preview": "preview.png",
@@ -18,7 +18,11 @@
         "view": {
             "type": "select",
             "label": "Show",
-            "options": ["Galaxy", "One system", "Cycle my systems"],
+            "options": [
+                "Galaxy",
+                "One system",
+                "Cycle my systems"
+            ],
             "value": "Galaxy"
         },
         "system": {
@@ -26,14 +30,85 @@
             "label": "System (for Galaxy: centre on it; for One system: which)",
             "value": ""
         },
+        "follow": {
+            "type": "text",
+            "label": "Follow replicant (its name or code): the galaxy stays centred on it as it travels, and One system shows the system it's in. Blank: off.",
+            "value": ""
+        },
+        "g_view": {
+            "type": "description",
+            "label": "Galaxy layers: View"
+        },
         "labels": {
             "type": "checkbox",
             "label": "Show labels",
             "value": true
         },
+        "mine": {
+            "type": "checkbox",
+            "label": "Only my systems",
+            "value": false
+        },
+        "g_glow": {
+            "type": "description",
+            "label": "Galaxy layers: Clouds & glows"
+        },
+        "regions": {
+            "type": "checkbox",
+            "label": "Region colours (each galactic region its own background tint)",
+            "value": true
+        },
+        "mark_hazard": {
+            "type": "checkbox",
+            "label": "Hazards (a red haze around threatened or hazardous systems)",
+            "value": true
+        },
+        "production": {
+            "type": "checkbox",
+            "label": "Show mining sparkles (what each system is mining now, coloured by resource)",
+            "value": true
+        },
+        "g_rings": {
+            "type": "description",
+            "label": "Galaxy layers: Rings & waves"
+        },
         "cover": {
             "type": "checkbox",
             "label": "Show relay/hub range",
+            "value": true
+        },
+        "mark_scanned": {
+            "type": "checkbox",
+            "label": "Scanned systems (green dotted ring)",
+            "value": true
+        },
+        "mark_survey": {
+            "type": "checkbox",
+            "label": "Surveying (a wave runs out from the star)",
+            "value": true
+        },
+        "prospect": {
+            "type": "checkbox",
+            "label": "Prospecting (your observatories' search cones)",
+            "value": true
+        },
+        "others": {
+            "type": "checkbox",
+            "label": "Other players (their devices and traffic at your beacons)",
+            "value": true
+        },
+        "g_lines": {
+            "type": "description",
+            "label": "Galaxy layers: Lines"
+        },
+        "relaynet": {
+            "type": "checkbox",
+            "label": "Relay network (one colour per network)",
+            "value": false
+        },
+        "moving": {
+            "type": "checkbox",
+            "label": "Ships in transit",
             "value": true
         },
         "fleets": {
@@ -46,15 +121,72 @@
             "label": "Show supply lines (materials and trade routes between your fleets' systems)",
             "value": true
         },
-        "production": {
+        "trail": {
             "type": "checkbox",
-            "label": "Show mining sparkles (what each system is mining now, coloured by resource)",
+            "label": "Trail (the replicant followed on Map › Trail in the web client)",
             "value": true
+        },
+        "g_icons": {
+            "type": "description",
+            "label": "Galaxy layers: Icons"
+        },
+        "mark_devices": {
+            "type": "checkbox",
+            "label": "My systems (blue square)",
+            "value": true
+        },
+        "mark_replicant": {
+            "type": "checkbox",
+            "label": "Replicants (pink diamond)",
+            "value": true
+        },
+        "mark_hub": {
+            "type": "checkbox",
+            "label": "Hubs (gold node)",
+            "value": true
+        },
+        "mark_ward": {
+            "type": "checkbox",
+            "label": "My wards (shield)",
+            "value": true
+        },
+        "mark_found": {
+            "type": "checkbox",
+            "label": "New finds (yellow starburst)",
+            "value": true
+        },
+        "mark_prospected": {
+            "type": "checkbox",
+            "label": "Prospected from (cyan brackets)",
+            "value": true
+        },
+        "mark_mega": {
+            "type": "checkbox",
+            "label": "Megastructures (violet hexagon)",
+            "value": true
+        },
+        "mark_rich": {
+            "type": "checkbox",
+            "label": "Resource rich (orange gem)",
+            "value": true
+        },
+        "mark_anomaly": {
+            "type": "checkbox",
+            "label": "Anomalies (magenta spiral)",
+            "value": true
+        },
+        "g_other": {
+            "type": "description",
+            "label": "Panel and timing"
         },
         "hud": {
             "type": "select",
             "label": "Dashboard panel (devices, stockpiles, fleets)",
-            "options": ["Right", "Left", "Off"],
+            "options": [
+                "Right",
+                "Left",
+                "Off"
+            ],
             "value": "Right"
         },
         "rotate": {

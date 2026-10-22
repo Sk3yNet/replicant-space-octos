@@ -13,7 +13,7 @@ This is an optional add-on. The web client works the same without it.
 ## What you need
 
 - Windows 10 or 11 with [Octos](https://github.com/underpig1/octos#quickstart) installed.
-- Your Replicant Space web client, version **1.28.0 or later** (1.29.0 for fleets and the dashboard panel, 1.30.0 for supply lines), reachable from that PC (for example
+- Your Replicant Space web client, version **1.28.0 or later** (1.29.0 for fleets and the dashboard panel, 1.30.0 for supply lines, 1.216.0 for the full set of galaxy layers and following a replicant), reachable from that PC (for example
   `https://replicant.example.com`).
 
 ## Install
@@ -47,6 +47,8 @@ the version in the wallpaper's bottom-right corner.
 | Wallpaper link | The link from Account › Desktop wallpaper. Without it the wallpaper shows the setup steps. |
 | Show | **Galaxy** (3D, slowly turning), **One system**, or **Cycle my systems** (every system with your devices, in turn). |
 | System | For *One system*: which one, e.g. `FALQUORYX`. For *Galaxy*: the star to centre on. Blank centres on your replicant. |
+| Follow replicant | A replicant's name or code. The galaxy stays centred on it, gliding along while it travels; *One system* shows whichever system it's in. Blank: off. Needs client 1.216.0. |
+| Galaxy layers | The same layer switches as the web client's Galaxy page, in the same groups: **View** (labels, only my systems), **Clouds & glows** (region colours, hazards, mining sparkles), **Rings & waves** (relay/hub range, scanned, surveying, prospecting, other players), **Lines** (relay network, ships in transit, fleets, supply lines, trail) and **Icons** (my systems, replicants, hubs, my wards, new finds, prospected from, megastructures, resource rich, anomalies). Before client 1.216.0 only labels, relay/hub range, fleets, supply lines and mining sparkles work. |
 | Show labels | Star and place names, and the labels of ships in transit. |
 | Show relay/hub range | The faint spheres around your relays (7.5 ly) and hubs (15 ly) on the galaxy. |
 | Show fleets | On the galaxy, a teal ring where each fleet's devices are, labelled with what the fleet is doing (mission phase, how many devices are working / moving / idle), and a dashed line to the system its mission is headed for. Stalled fleets show in amber. In the system views, the fleets in that system are listed under its name. Needs client 1.29.0. |
@@ -59,7 +61,7 @@ the version in the wallpaper's bottom-right corner.
 
 Changes in Octos apply straight away.
 
-The wallpaper's bottom-right corner shows the versions running, e.g. `client 1.30.1 · add-on 1.4.0`. The add-on's
+The wallpaper's bottom-right corner shows the versions running, e.g. `client 1.30.1 · add-on 1.5.0`. The add-on's
 version is also in its description in the Octos app. If a setting seems to do nothing, check the client version there:
 the newer settings need the client version listed next to them.
 

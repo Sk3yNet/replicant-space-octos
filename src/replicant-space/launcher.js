@@ -4,10 +4,23 @@
 (function () {
   "use strict";
 
-  var VERSION = "1.4.0";   // keep in step with octos.json
+  var VERSION = "1.5.0";   // keep in step with octos.json
   var VIEWS = { "Galaxy": "galaxy", "One system": "system", "Cycle my systems": "cycle" };
-  var opts = { link: "", view: "Galaxy", system: "", labels: true, cover: true, fleets: true, supply: true, production: true, hud: "Right", rotate: 4, refresh: 5,
-              cycle: 60 };
+  // the galaxy's layers, grouped as on the web client's Galaxy page (setting id → the page's layer id, and its default)
+  var LAYERS = {
+    labels: ["labels", true], mine: ["mine", false],                                                   // View
+    regions: ["regions", true], mark_hazard: ["mark-hazard", true], production: ["production", true],  // Clouds & glows
+    cover: ["cover", true], mark_scanned: ["mark-scanned", true], mark_survey: ["mark-survey", true],  // Rings & waves
+    prospect: ["prospect", true], others: ["others", true],
+    relaynet: ["relaynet", false], moving: ["moving", true], fleets: ["fleets", true],                 // Lines
+    supply: ["supply", true], trail: ["trail", true],
+    mark_devices: ["mark-devices", true], mark_replicant: ["mark-replicant", true],                    // Icons
+    mark_hub: ["mark-hub", true], mark_ward: ["mark-ward", true], mark_found: ["mark-found", true],
+    mark_prospected: ["mark-prospected", true], mark_mega: ["mark-mega", true], mark_rich: ["mark-rich", true],
+    mark_anomaly: ["mark-anomaly", true]
+  };
+  var opts = { link: "", view: "Galaxy", system: "", follow: "", hud: "Right", rotate: 4, refresh: 5, cycle: 60 };
+  Object.keys(LAYERS).forEach(function (id) { opts[id] = LAYERS[id][1]; });
   var wall = document.getElementById("wall");
   var setup = document.getElementById("setup");
   var why = document.getElementById("why");
@@ -55,11 +68,12 @@
     q.set("view", VIEWS[opts.view] || "galaxy");
     var star = String(opts.system || "").trim().toUpperCase();
     if (star) q.set("star", star);
-    q.set("labels", off(opts.labels) ? "0" : "1");
-    q.set("cover", off(opts.cover) ? "0" : "1");
-    q.set("fleets", off(opts.fleets) ? "0" : "1");
-    q.set("supply", off(opts.supply) ? "0" : "1");
-    q.set("production", off(opts.production) ? "0" : "1");
+    var follow = String(opts.follow || "").trim();
+    if (follow) q.set("follow", follow);
+    // the older switches, for clients before 1.216.0; newer ones read the layer list
+    ["labels", "cover", "fleets", "supply", "production"].forEach(function (id) { q.set(id, off(opts[id]) ? "0" : "1"); });
+    q.set("layers", Object.keys(LAYERS).filter(function (id) { return !off(opts[id]); })
+                                     .map(function (id) { return LAYERS[id][0]; }).join(","));
     var hud = String(opts.hud || "Right").toLowerCase();
     q.set("hud", hud === "left" || hud === "off" ? hud : "right");
     q.set("rotate", String(num(opts.rotate, 4, 0, 20) / 10));
